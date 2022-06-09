@@ -59,7 +59,7 @@ body {
    grid-template-columns: repeat(1, minmax(300px, 330px));
 }
 
-.dashboard__person{
+.dashboard__person {
    width: 100%;
    background-color: var(--blue-800);
    border-radius: var(--radii);
@@ -76,42 +76,43 @@ body {
    gap: 1rem;
 }
 
-.info-card__photo{
+.info-card__photo {
    width: 50px;
    height: 50px;
    border: 3px solid var(--white-100);
    border-radius: 50%;
 }
-.info-card__name{
+.info-card__name {
    
 }
-.info-card__subtitle{
+.info-card__subtitle {
    font-weight: var(--weight-light);
    margin: 0;
    font-size: 12px;
 }
-.info-card__title{
+.info-card__title {
    font-weight: var(--weight-light);
    margin: 0.5rem 0 0;
 }
 .view-selector {
-   padding: 1.25rem 2rem;
+   padding: 0.5rem 2rem;
    display: flex;
    justify-content: space-between;
 }
 
-.view-selector__item{
+.view-selector__item {
    list-style-type: none;
    font-size: 12px;
    color: var(--blue-200);
    cursor: pointer;
+   font-weight: var(--weight-regular);
 }
 
 .view-selector__item:hover, .view-selector__item--active {
    color: var(--white-100);
 }
 
-.dashboard__item{
+.dashboard__item {
    width: 100%;
    padding-top: 2.15rem;
    background-color: var(--white-100);
@@ -155,26 +156,32 @@ body {
    bottom: -2px;
 }
 
-.tracking-card__header, .tracking-card__body{
+.tracking-card__header, .tracking-card__body {
    display: flex;
    align-items: center;
    justify-content: space-between;
 }
 
-.tracking-card__title{
-   font-weight: var(--weight-regular)
+.tracking-card__header {
+   margin-bottom: 1rem;
+}
+
+.tracking-card__title {
+   margin: 0;
+   font-weight: var(--weight-regular);
+   font-size: var(--fs-base);
 }
 
 .tracking-card__menu {
    cursor: pointer;
 }
 
-.tracking-card__time{
+.tracking-card__time {
    font-size: 35px;
    font-weight: var(--weight-light);
 }
 
-.tracking-card__prev-period{
+.tracking-card__prev-period {
    font-size: 12px;
    font-weight: var(--weight-light);
    color: var(--blue-200);
@@ -183,4 +190,47 @@ body {
 .dashboard__item:hover .tracking-card {
    background-color: var(--blue-500);
    font-size: var(--fs-base);
+}
+
+@media (min-width: 1024px) {
+   .dashboard__content {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+   }
+   .dashboard__person {
+      grid-row-start: 1;
+      grid-row-end: 3;
+      grid-column-start: 1;
+      grid-column-end: 2;
+      height: 100%;
+
+      display: flex;
+      flex-direction: column;
+   }
+   .info-card {
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      flex-grow: 1;
+   }
+   .info-card__photo {
+      margin-bottom: 1.5rem;
+   }
+   .info-card__title {
+      font-size: 30px;
+   }
+   .view-selector {
+      flex-direction: column;
+   }
+   .view-selector__item:not(:last-child) {
+      margin-bottom: 1rem;
+   }
+   .tracking-card__body {
+      flex-direction: column;
+      align-items: flex-start;
+   }
+   .tracking-card__time {
+      margin-bottom: 0.5rem;
+   }
+   
 }
